@@ -96,7 +96,7 @@ module Likeable
 
     def all_liked_by(user)
       ids = all_liked_ids_by(user)
-      self.where(:id => ids)
+      self.where(:_id.in => ids)
     end
 
     def after_like(*methods)
